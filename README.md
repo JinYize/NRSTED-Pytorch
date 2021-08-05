@@ -4,7 +4,7 @@ NR-STED is an opinion-unaware and distortion-unaware (OU-DU) no reference (NR) v
 
 This is a pytorch implementation of NR-STED. To train from scratch, please follow these steps to prepare for training:
 * Download matlabPyrTools/ on https://github.com/LabForComputationalVision/matlabPyrTools.
-* Download CSIQ VQA database.
-* Use prepare_CSIQ_SRRED.m and prepare_CSIQ_TRRED.m in the MATLAB/ folder to convert the databases and compute SRRED and TRRED indices, and link the converted databases to the folder databases/.
+* Download the CSIQ VQA database.
+* Use prepare_CSIQ_SRRED.m and prepare_CSIQ_TRRED.m in the MATLAB/ folder to convert the CSIQ VQA database and compute per-frame SRRED and TRRED indices, and link the converted database to the folder databases/.
 
 
