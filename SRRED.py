@@ -106,13 +106,13 @@ def main():
     args = parser.parse_args()
 
     contents = []
-    PATH = "../../databases/Entropy_Diff_Prediction/"
-    text_file = open(PATH+"matlab/names.txt", "r")
+    PATH = "databases/CSIQ_VQA/"
+    text_file = open(PATH+"CSIQ_VQA_names.txt", "r")
     currContents = text_file.read().split('\n')
     for jj, eachName in enumerate(currContents[0:-1]):
         fullName = PATH+"fov_viewports/"+eachName
         contents.append(fullName)
-    currFED = loadmat(PATH+"matlab/FED_scores.mat")["FED_score"]
+    currFED = loadmat(PATH+"databases/CSIQ_VQA/CSIQ_VQA_name_srred.mat")["SRRED"]
     FEDScores = currFED
 
     args.train_dataset = NRFED_Dataset(contents,FEDScores)
