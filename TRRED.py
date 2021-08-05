@@ -112,10 +112,9 @@ def main():
     for jj, eachName in enumerate(currContents[0:-1]):
         fullName = PATH+"fov_viewports/"+eachName
         contents.append(fullName)
-    currFED = loadmat(PATH+"databases/CSIQ_VQA/CSIQ_VQA_name_srred.mat")["SRRED"]
-    FEDScores = currFED
+    TRRED = loadmat(PATH+"databases/CSIQ_VQA/CSIQ_VQA_name_srred.mat")["SRRED"]
 
-    args.train_dataset = TRRED_Dataset(contents,FEDScores)
+    args.train_dataset = TRRED_Dataset(contents,TRRED)
 
     #########################################################
     args.world_size = args.gpus * args.nodes                #
