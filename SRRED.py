@@ -31,7 +31,7 @@ def train(gpu, args):
     ############################################################
 
     torch.manual_seed(0)
-    model = NRFED(1,0.2)
+    model = SRRED(1,0.2)
     torch.cuda.set_device(gpu)
     model.cuda(gpu)
     batch_size = 4
@@ -112,10 +112,9 @@ def main():
     for jj, eachName in enumerate(currContents[0:-1]):
         fullName = PATH+"fov_viewports/"+eachName
         contents.append(fullName)
-    currFED = loadmat(PATH+"databases/CSIQ_VQA/CSIQ_VQA_name_srred.mat")["SRRED"]
-    FEDScores = currFED
+    SRRED = loadmat(PATH+"databases/CSIQ_VQA/CSIQ_VQA_name_srred.mat")["SRRED"]
 
-    args.train_dataset = NRFED_Dataset(contents,FEDScores)
+    args.train_dataset = SRRED_Dataset(contents,SRRED)
 
     #########################################################
     args.world_size = args.gpus * args.nodes                #
