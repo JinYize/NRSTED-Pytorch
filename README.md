@@ -11,4 +11,8 @@ To train from scratch, please follow these steps to prepare for training:
 * Download the CSIQ VQA database.
 * Use prepare_CSIQ_SRRED.m and prepare_CSIQ_TRRED.m in the MATLAB/ folder to convert the CSIQ VQA database and compute per-frame SRRED and TRRED indices, and link the converted database to the folder databases/.
 
+## Training NR-SRRED from Sratch
 
+```console
+python SRRED.py -n 1 -g 4 -nr 0 --epochs 20
+```
